@@ -3,6 +3,7 @@ package vaultengine
 import (
 	"fmt"
 	"strings"
+	"time"
 )
 
 // Folder defines a level of the Vault structure
@@ -81,6 +82,9 @@ func (client *Client) PathReader(parentFolder *Folder, path string) error {
 				(*parentFolder)[strKey] = s
 			}
 		}
+
+		time.Sleep(100 * time.Millisecond)
+
 	}
 
 	return nil
